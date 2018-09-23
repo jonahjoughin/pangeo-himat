@@ -11,7 +11,7 @@ resource "kubernetes_replication_controller" "dask-worker" {
       app = "dask"
       role = "worker"
     }
-    replicas = 250
+    replicas = 500 # Arbitrarily large number of replicas. Need to figure out better way to do this
     template {
       container {
         image = "jonahjoughin/pangeo-cluster:latest"
