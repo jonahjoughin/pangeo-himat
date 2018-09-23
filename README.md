@@ -8,7 +8,7 @@
 5. Run `terraform apply --target=module.eks`
 6. Run `terraform apply --target=module.kubernetes`
 
-At this point, your cluster should be up and running. Verify this by running `kubectl get services --kubeconfig ./kubeconfig.yml`. You should see a list of a few services, including `dask-scheduler` and `jupyter-server`.
+At this point, your cluster should be up and running. You should see two outputs, `jupyter_url` and `dask_url`. Visit `jupyter_url` to access the notebook server attached to the cluster, and `dask_url` to view information on dask jobs. Because containers in the cluster take time to set up, these links may not work for a minute or two. Make sure to include the port number when opening the urls in the browser
 ## Scaling
 To scale the number of nodes in the cluster, change, `spot_pool_size` in `terraform.tfvars`, and run `terraform apply --target=module.eks` again.
 ## Deletion
