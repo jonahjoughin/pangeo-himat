@@ -1,3 +1,4 @@
+# Workaround for strange terraform bug
 provider "aws" {
   region= "us-west-2"
 }
