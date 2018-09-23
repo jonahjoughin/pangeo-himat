@@ -64,8 +64,8 @@ resource "aws_autoscaling_group" "stable_pool" {
 # Create worker scaling group
 resource "aws_autoscaling_group" "spot_pool" {
   launch_configuration = "${aws_launch_configuration.spot_pool.id}"
-  desired_capacity     = "${var.spot_pool_size}"
-  max_size             = 10
+  desired_capacity     = "${var.spot_node_count}"
+  max_size             = "${var.spot_node_count}"
   min_size             = 0
   name                 = "${var.cluster_name}_spot"
   vpc_zone_identifier  = ["${aws_subnet.cluster.*.id}"]

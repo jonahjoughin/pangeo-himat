@@ -16,8 +16,12 @@ variable "spot_instance_type" {
   description = "EC2 instance type for spot nodes"
 }
 
-variable "spot_pool_size" {
+variable "spot_node_count" {
   description = "EC2 instance type for spot nodes"
+}
+
+variable "dask_worker_count" {
+  description = "Number of dask workers to schedule"
 }
 
 variable "config_map_output_path" {

@@ -16,7 +16,7 @@ module "eks" {
   cluster_version = "${var.cluster_version}"
   stable_instance_type = "${var.stable_instance_type}"
   spot_instance_type = "${var.spot_instance_type}"
-  spot_pool_size = "${var.spot_pool_size}"
+  spot_node_count = "${var.spot_node_count}"
   config_map_output_path = "${var.config_map_output_path}"
   kubeconfig_output_path = "${var.kubeconfig_output_path}"
   apply_config_map = "${var.apply_config_map}"
@@ -33,4 +33,5 @@ module "kubernetes" {
   cluster_name = "${var.cluster_name}"
   cluster_endpoint = "${module.eks.cluster_endpoint}"
   cluster_certificate_authority_data = "${module.eks.cluster_certificate_authority_data}"
+  dask_worker_count = "${var.dask_worker_count}"
 }

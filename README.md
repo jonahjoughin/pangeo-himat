@@ -10,6 +10,9 @@
 
 At this point, your cluster should be up and running. You should see two outputs, `jupyter_url` and `dask_url`. Visit `jupyter_url` to access the notebook server attached to the cluster, and `dask_url` to view information on dask jobs. Because containers in the cluster take time to set up, these links may not work for a minute or two. Make sure to include the port number when opening the urls in the browser
 ## Scaling
-To scale the number of nodes in the cluster, change, `spot_pool_size` in `terraform.tfvars`, and run `terraform apply --target=module.eks` again.
+To scale the number of nodes in the cluster, change, `spot_node_count` in `terraform.tfvars`, and run `terraform apply --target=module.eks` again.
 ## Deletion
-To delete your cluster, run `terraform destroy --target=module.kubernetes` followed by `terraform destroy --target=module.eks`.
+1. Run `terraform destroy --target=module.kubernetes`
+2. Run `terraform destroy --target=module.eks`
+
+At this point, all of the resources associated with your cluster should be destroyed

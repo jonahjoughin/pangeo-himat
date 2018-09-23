@@ -3,7 +3,7 @@ variable "cluster_region" {}
 variable "cluster_version" {}
 variable "stable_instance_type" {}
 variable "spot_instance_type" {}
-variable "spot_pool_size" {}
+variable "spot_node_count" {}
 variable "config_map_output_path" {}
 variable "kubeconfig_output_path" {}
 variable "apply_kubeconfig" {}
