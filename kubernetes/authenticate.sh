@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-
 # Extract cluster name
 eval "$(jq -r '@sh "CLUSTER_NAME=\(.cluster_name)"')"
 # Retrieve token with aws-iam-authenticator

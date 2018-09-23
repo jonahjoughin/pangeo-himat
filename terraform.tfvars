@@ -1,4 +1,4 @@
-cluster_name = "alpha"
+cluster_name = "beta"
 cluster_region = "us-west-2"
 cluster_version = "1.10"
 spot_pool_size = "3"

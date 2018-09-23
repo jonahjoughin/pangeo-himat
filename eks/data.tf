@@ -21,7 +21,8 @@ resource "null_resource" "update_config_map" {
   }
 
   triggers {
-    config_map_rendered = "${data.template_file.config_map.rendered}"
+    config_map_rendered = "${local_file.kubeconfig.content}"
+    kubeconfig_rendered = "${local_file.config_map.content}"
   }
 
   depends_on = ["local_file.kubeconfig", "local_file.config_map"]

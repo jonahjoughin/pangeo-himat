@@ -6,10 +6,10 @@
 3. Modify `terraform.tfvars` as necessary.  
 4. Run `terraform init`
 5. Run `terraform apply --target=module.eks`
-6. Run `terraform apply`
+6. Run `terraform apply --target=module.kubernetes`
 
 At this point, your cluster should be up and running. Verify this by running `kubectl get services --kubeconfig ./kubeconfig.yml`. You should see a list of a few services, including `dask-scheduler` and `jupyter-server`.
 ## Scaling
-To scale the number of nodes in the cluster, change, `spot_pool_size` in `terraform.tfvars`, and run `terraform apply` again.
+To scale the number of nodes in the cluster, change, `spot_pool_size` in `terraform.tfvars`, and run `terraform apply --target=module.eks` again.
 ## Deletion
-To delete your cluster, run `terraform destroy`.
+To delete your cluster, run `terraform destroy --target=module.kubernetes` followed by `terraform destroy --target=module.eks`.
