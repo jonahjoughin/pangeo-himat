@@ -1,6 +1,7 @@
 .terraform
+.terraform.*
 terraform.tfstate
-terraform.tfstate.backup
+terraform.tfstate.*
 
 kubeconfig.yml
 config_map.yml
