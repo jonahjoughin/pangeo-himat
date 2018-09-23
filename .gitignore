@@ -1,0 +1,6 @@
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+
+kubeconfig.yml
+config_map.yml

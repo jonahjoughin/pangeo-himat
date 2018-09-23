@@ -1,0 +1,10 @@
+cluster_name = "alpha"
+cluster_region = "us-west-2"
+cluster_version = "1.10"
+spot_pool_size = "3"
+stable_instance_type = "m5.xlarge"
+spot_instance_type = "m5.xlarge"
+config_map_output_path = "./config_map.yml"
+kubeconfig_output_path = "./kubeconfig.yml"
+apply_config_map = true
+apply_kubeconfig = true
