@@ -34,4 +34,5 @@ module "kubernetes" {
   cluster_endpoint = "${module.eks.cluster_endpoint}"
   cluster_certificate_authority_data = "${module.eks.cluster_certificate_authority_data}"
   dask_worker_count = "${var.dask_worker_count}"
+  worker_image = "${var.worker_image}"
 }

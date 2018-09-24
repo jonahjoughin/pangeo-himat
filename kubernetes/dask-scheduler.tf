@@ -48,7 +48,7 @@ resource "kubernetes_replication_controller" "dask-scheduler" {
     }
     template {
       container {
-        image = "jonahjoughin/pangeo-cluster:latest"
+        image = "${var.worker_image}"
         name  = "jupyter-server"
         command = ["dask-scheduler"]
         port {

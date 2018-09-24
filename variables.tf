@@ -39,3 +39,7 @@ variable "apply_kubeconfig" {
 variable "apply_config_map" {
   description = "Whether to write and apply the config_map file."
 }
+
+variable "worker_image" {
+  description = "Docker image to pull for worker nodes"
+}

@@ -38,7 +38,7 @@ resource "kubernetes_replication_controller" "jupyter-server" {
     }
     template {
       container {
-        image = "jonahjoughin/pangeo-cluster:latest"
+        image = "${var.worker_image}"
         name  = "jupyter-server"
         command = ["jupyter"]
         args = ["notebook", "--allow-root", "--config", "notebook_config.py"]
