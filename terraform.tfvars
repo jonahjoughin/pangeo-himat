@@ -10,3 +10,4 @@ kubeconfig_output_path = "./kubeconfig.yml"
 apply_config_map = true
 apply_kubeconfig = true
 worker_image = "jonahjoughin/pangeo-cluster:latest"
+jupyter_volume_gb = "8"

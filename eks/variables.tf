@@ -8,3 +8,4 @@ variable "config_map_output_path" {}
 variable "kubeconfig_output_path" {}
 variable "apply_kubeconfig" {}
 variable "apply_config_map" {}
+variable "jupyter_volume_gb" {}

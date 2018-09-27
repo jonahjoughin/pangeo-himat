@@ -1,0 +1,34 @@
+name: pangeo-cluster
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - cartopy
+  - dask
+  - distributed
+  - folium
+  - geojson
+  - geopandas
+  - h5py
+  - jupyter
+  - matplotlib
+  - mplleaflet
+  - numpy
+  - pandas
+  - progressbar2
+  - psycopg2
+  - pysal
+  - python=3.6.5
+  - rasterio
+  - rasterstats
+  - s3fs
+  - scipy
+  - seaborn
+  - shapely
+  - sqlalchemy
+  - xarray
+  - zarr
+  - pip:
+    - pyastronomy
+    - regionmask
+prefix: /Users/jonah/miniconda3/envs/pangeo-cluster

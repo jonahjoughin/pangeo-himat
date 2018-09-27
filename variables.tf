@@ -43,3 +43,7 @@ variable "apply_config_map" {
 variable "worker_image" {
   description = "Docker image to pull for worker nodes"
 }
+
+variable "jupyter_volume_gb" {
+  description = "Jupyter volume size in gigabytes"
+}

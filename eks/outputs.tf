@@ -27,3 +27,8 @@ output "kubeconfig" {
   description = "kubectl config file contents for this EKS cluster."
   value       = "${data.template_file.kubeconfig.rendered}"
 }
+
+output "jupyter_volume_id" {
+  description = "ID of persistent volume attached to Jupyer Notebook"
+  value = "${aws_ebs_volume.jupyter_volume.id}"
+}

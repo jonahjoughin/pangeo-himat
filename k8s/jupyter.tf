@@ -51,10 +51,56 @@ resource "kubernetes_replication_controller" "jupyter-server" {
             cpu = "1500m"
           }
         }
+        volume_mount {
+          mount_path = "/home/jupyter/persistent"
+          name = "jupyter-volume"
+        }
+      }
+      volume {
+        name = "jupyter-volume"
+        persistent_volume_claim {
+          claim_name = "jupyter-volume"
+        }
       }
       node_selector {
         kind = "stable"
       }
     }
   }
+}
+
+resource "kubernetes_persistent_volume" "jupyter-volume" {
+  metadata {
+    name            = "jupyter-volume"
+  }
+  spec {
+    capacity {
+      storage       = "${var.jupyter_volume_gb}Gi"
+    }
+
+    access_modes    = ["ReadWriteOnce"]
+
+    persistent_volume_source {
+      aws_elastic_block_store {
+        volume_id   = "${var.jupyter_volume_id}"
+        fs_type     = "ext4"
+      }
+    }
+  }
+}
+
+resource "kubernetes_persistent_volume_claim" "jupyter-volume" {
+  metadata {
+    name            = "jupyter-volume"
+  }
+  spec {
+    resources {
+      requests {
+        storage     = "${var.jupyter_volume_gb}Gi"
+      }
+    }
+    access_modes    = ["ReadWriteOnce"]
+    volume_name     = "jupyter-volume"
+  }
+  depends_on = ["kubernetes_persistent_volume.jupyter-volume"]
 }
