@@ -28,7 +28,7 @@ module "eks" {
 }
 
 module "kubernetes" {
-  source = "./kubernetes"
+  source = "./k8s"
 
   cluster_name = "${var.cluster_name}"
   cluster_endpoint = "${module.eks.cluster_endpoint}"
