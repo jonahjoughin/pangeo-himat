@@ -22,7 +22,7 @@ If you need to use some package not included in the default docker image, you ca
 1. Download and start [docker](https://docs.docker.com/install/)
 2. Log in or create an account on Docker Cloud
 3. Navigate to the `docker` folder
-3. Modify `environment.yml to include the packages you need`
+3. Modify `environment.yml` to include the packages you need
 4. Run `docker build -t <docker-cloud-username>/<image-name>:latest .` to build your image locally. This process may take several minutes.
 5. Run `docker push <docker-cloud-username>/<image-name>:latest` to upload your image
 6. Change `worker_image` in `terraform.tfvars` to `<docker-cloud-username>/<image-name>:latest`
