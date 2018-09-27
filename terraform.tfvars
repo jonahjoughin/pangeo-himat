@@ -10,16 +10,21 @@ worker_image = "jonahjoughin/pangeo-cluster:latest"
 # Dask worker pool size
 spot_node_count = 3
 dask_worker_count = 250
+
+# ------------------------------------------------------------------------------------------------------- #
+# Note: Make sure that scheduler and notebook resources can be scheduled on stable instance simutaneously #
+# ------------------------------------------------------------------------------------------------------- #
+
 # Dask worker resources
-dask_worker_mb_ram = 1600
-dask_worker_milli_cpu = 400
+dask_worker_mb_ram = 1600 # 1.6Gb
+dask_worker_milli_cpu = 400 # 0.4 cores
 # Dask scheduler resources
-dask_scheduler_mb_ram = 6000
-dask_scheduler_milli_cpu = 1500
+dask_scheduler_mb_ram = 6000 # 6Gb
+dask_scheduler_milli_cpu = 1500 # 1.5 cores
 # Jupyter notebook resources
-jupyter_mb_ram = 6000
-jupyter_milli_cpu = 1500
-jupyter_gb_storage = 16
+jupyter_mb_ram = 6000 # 6Gb
+jupyter_milli_cpu = 1500 # 1.5 cores
+jupyter_gb_storage = 16 # 16Gb
 # File output paths
 config_map_output_path = "./config_map.yml"
 kubeconfig_output_path = "./kubeconfig.yml"
