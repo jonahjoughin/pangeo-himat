@@ -47,8 +47,8 @@ resource "kubernetes_replication_controller" "jupyter-server" {
         }
         resources {
           requests {
-            memory = "6000Mi"
-            cpu = "1500m"
+            cpu = "${var.jupyter_milli_cpu}m"
+            memory = "${var.jupyter_mb_ram}Mi"
           }
         }
         volume_mount {
@@ -75,7 +75,7 @@ resource "kubernetes_persistent_volume" "jupyter-volume" {
   }
   spec {
     capacity {
-      storage       = "${var.jupyter_volume_gb}Gi"
+      storage       = "${var.jupyter_gb_storage}Gi"
     }
 
     access_modes    = ["ReadWriteOnce"]
@@ -96,7 +96,7 @@ resource "kubernetes_persistent_volume_claim" "jupyter-volume" {
   spec {
     resources {
       requests {
-        storage     = "${var.jupyter_volume_gb}Gi"
+        storage     = "${var.jupyter_gb_storage}Gi"
       }
     }
     access_modes    = ["ReadWriteOnce"]

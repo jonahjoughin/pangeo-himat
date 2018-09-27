@@ -56,8 +56,8 @@ resource "kubernetes_replication_controller" "dask-scheduler" {
         }
         resources {
           requests {
-            memory = "6000Mi"
-            cpu = "1500m"
+            cpu = "${var.dask_scheduler_milli_cpu}m"
+            memory = "${var.dask_scheduler_mb_ram}Mi"
           }
         }
       }

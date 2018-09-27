@@ -6,4 +6,4 @@ variable "spot_instance_type" {}
 variable "spot_node_count" {}
 variable "config_map_output_path" {}
 variable "kubeconfig_output_path" {}
-variable "jupyter_volume_gb" {}
+variable "jupyter_gb_storage" {}

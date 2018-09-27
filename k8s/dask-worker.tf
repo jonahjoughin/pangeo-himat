@@ -17,11 +17,11 @@ resource "kubernetes_replication_controller" "dask-worker" {
         image = "${var.worker_image}"
         name  = "dask-worker"
         command = ["dask-worker"]
-        args =  ["dask-scheduler:8786", "--memory-limit", "1.6e9", "--nthreads", "1", "--nprocs", "1"]
+        args =  ["dask-scheduler:8786", "--memory-limit", "${var.dask_worker_mb_ram}000000", "--nthreads", "1", "--nprocs", "1"]
         resources{
           requests{
-            cpu    = "400m"
-            memory = "1600Mi"
+            cpu    = "${var.dask_worker_milli_cpu}m"
+            memory = "${var.dask_worker_mb_ram}Mi"
           }
         }
       }

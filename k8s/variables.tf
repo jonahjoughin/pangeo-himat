@@ -1,7 +1,13 @@
 variable "cluster_name" {}
 variable "cluster_endpoint" {}
 variable "cluster_certificate_authority_data" {}
-variable "dask_worker_count" {}
 variable "worker_image" {}
-variable "jupyter_volume_gb" {}
+variable "dask_worker_count" {}
+variable "dask_worker_mb_ram" {}
+variable "dask_worker_milli_cpu" {}
+variable "dask_scheduler_mb_ram" {}
+variable "dask_scheduler_milli_cpu" {}
+variable "jupyter_mb_ram" {}
+variable "jupyter_milli_cpu" {}
+variable "jupyter_gb_storage" {}
 variable "jupyter_volume_id" {}
