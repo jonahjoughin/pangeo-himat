@@ -13,7 +13,7 @@ resource "kubernetes_service" "dask-scheduler" {
       name = "scheduler"
     }
     port {
-      port = 8787
+      port = 80
       target_port = 8787
       name = "bokeh"
     }

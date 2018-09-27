@@ -8,7 +8,7 @@ resource "kubernetes_service" "jupyter-server" {
       role = "server"
     }
     port {
-      port = 8888
+      port = 80
       target_port = 8888
       name = "http"
     }
