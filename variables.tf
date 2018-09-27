@@ -32,14 +32,6 @@ variable "kubeconfig_output_path" {
   description = "Determines where config_map files are placed"
 }
 
-variable "apply_kubeconfig" {
-  description = "Whether to write the kubeconfig file"
-}
-
-variable "apply_config_map" {
-  description = "Whether to write and apply the config_map file."
-}
-
 variable "worker_image" {
   description = "Docker image to pull for worker nodes"
 }

@@ -4,14 +4,14 @@ data "aws_availability_zones" "available" {}
 resource "local_file" "kubeconfig" {
   content  = "${data.template_file.kubeconfig.rendered}"
   filename = "${var.kubeconfig_output_path}"
-  count    = "${var.apply_kubeconfig ? 1 : 0}"
+  count = 1
 }
 
 # Save config_map to file
 resource "local_file" "config_map" {
   content  = "${data.template_file.config_map.rendered}"
   filename = "${var.config_map_output_path}"
-  count    = "${var.apply_config_map ? 1 : 0}"
+  count = 1
 }
 
 # Apply config map automatically
@@ -27,7 +27,7 @@ resource "null_resource" "update_config_map" {
 
   depends_on = ["local_file.kubeconfig", "local_file.config_map"]
 
-  count = "${var.apply_config_map ? 1 : 0}"
+  count = 1
 }
 
 data "template_file" "config_map" {

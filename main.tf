@@ -19,8 +19,6 @@ module "eks" {
   spot_node_count = "${var.spot_node_count}"
   config_map_output_path = "${var.config_map_output_path}"
   kubeconfig_output_path = "${var.kubeconfig_output_path}"
-  apply_config_map = "${var.apply_config_map}"
-  apply_kubeconfig = "${var.apply_kubeconfig}"
   jupyter_volume_gb = "${var.jupyter_volume_gb}"
   providers = {
     aws = "aws.use1"

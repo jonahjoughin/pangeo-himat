@@ -7,7 +7,5 @@ stable_instance_type = "m5.xlarge"
 spot_instance_type = "m5.xlarge"
 config_map_output_path = "./config_map.yml"
 kubeconfig_output_path = "./kubeconfig.yml"
-apply_config_map = true
-apply_kubeconfig = true
 worker_image = "jonahjoughin/pangeo-cluster:latest"
 jupyter_volume_gb = "8"
