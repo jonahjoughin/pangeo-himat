@@ -5,6 +5,8 @@ variable "worker_image" {}
 variable "dask_worker_count" {}
 variable "dask_worker_mb_ram" {}
 variable "dask_worker_milli_cpu" {}
+variable "dask_worker_threads" {}
+variable "dask_worker_procs" {}
 variable "dask_scheduler_mb_ram" {}
 variable "dask_scheduler_milli_cpu" {}
 variable "jupyter_mb_ram" {}

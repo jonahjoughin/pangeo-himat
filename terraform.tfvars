@@ -18,6 +18,8 @@ dask_worker_count = 250
 # Dask worker resources
 dask_worker_mb_ram = 1600 # 1.6Gb
 dask_worker_milli_cpu = 400 # 0.4 cores
+dask_worker_threads = 1
+dask_worker_procs = 1
 # Dask scheduler resources
 dask_scheduler_mb_ram = 6000 # 6Gb
 dask_scheduler_milli_cpu = 1500 # 1.5 cores

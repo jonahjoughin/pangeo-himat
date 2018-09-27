@@ -36,6 +36,14 @@ variable "dask_worker_milli_cpu" {
   description = "Dask worker CPU in millicores"
 }
 
+variable "dask_worker_threads" {
+  description = "Number of threads spawned by dask worker"
+}
+
+variable "dask_worker_procs" {
+  description = "Number of processes spawned by dask worker"
+}
+
 variable "dask_scheduler_mb_ram" {
   description = "Dask scheduler RAM in Mb"
 }

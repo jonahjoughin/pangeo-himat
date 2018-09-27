@@ -24,7 +24,7 @@ module "eks" {
   # File output paths
   config_map_output_path = "${var.config_map_output_path}"
   kubeconfig_output_path = "${var.kubeconfig_output_path}"
-  
+
   providers = {
     aws = "aws.use1"
   }
@@ -43,6 +43,8 @@ module "kubernetes" {
   # Dask worker resources
   dask_worker_mb_ram = "${var.dask_worker_mb_ram}"
   dask_worker_milli_cpu = "${var.dask_worker_milli_cpu}"
+  dask_worker_threads = "${var.dask_worker_threads}"
+  dask_worker_procs = "${var.dask_worker_procs}"
   # Dask scheduler resources
   dask_scheduler_mb_ram = "${var.dask_scheduler_mb_ram}"
   dask_scheduler_milli_cpu = "${var.dask_scheduler_milli_cpu}"
