@@ -1,5 +1,5 @@
 # Cluster info
-cluster_name = "beta"
+cluster_name = "pangeo-himat"
 cluster_region = "us-west-2"
 cluster_version = "1.10"
 # Node types
@@ -9,7 +9,7 @@ spot_instance_type = "m5.xlarge"
 worker_image = "jonahjoughin/pangeo-himat:latest"
 # Dask worker pool size
 spot_node_count = 3
-dask_worker_count = 250
+dask_worker_count = 100
 
 # ------------------------------------------------------------------------------------------------------- #
 # Note: Make sure that scheduler and notebook resources can be scheduled on stable instance simutaneously #
