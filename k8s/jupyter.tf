@@ -41,7 +41,7 @@ resource "kubernetes_replication_controller" "jupyter-server" {
         image = "${var.worker_image}"
         name  = "jupyter-server"
         command = ["jupyter"]
-        args = ["notebook", "--allow-root", "--config", "notebook_config.py"]
+        args = ["notebook", "--allow-root", "--config", "/notebook_config.py"]
         port {
           container_port = 8888
         }
@@ -52,7 +52,7 @@ resource "kubernetes_replication_controller" "jupyter-server" {
           }
         }
         volume_mount {
-          mount_path = "/home/jupyter/persistent"
+          mount_path = "/home/jupyter"
           name = "jupyter-volume"
         }
       }

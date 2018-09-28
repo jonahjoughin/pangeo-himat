@@ -6,7 +6,7 @@ cluster_version = "1.10"
 stable_instance_type = "m5.xlarge"
 spot_instance_type = "m5.xlarge"
 # Docker image
-worker_image = "jonahjoughin/pangeo-cluster:latest"
+worker_image = "jonahjoughin/pangeo-himat:latest"
 # Dask worker pool size
 spot_node_count = 3
 dask_worker_count = 250
