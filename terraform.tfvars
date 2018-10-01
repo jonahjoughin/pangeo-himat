@@ -2,14 +2,17 @@
 cluster_name = "pangeo-himat"
 cluster_region = "us-west-2"
 cluster_version = "1.10"
-# Node types
+# Node types (changes will affect cost)
 stable_instance_type = "m5.xlarge"
 spot_instance_type = "m5.xlarge"
 # Docker image
 worker_image = "jonahjoughin/pangeo-himat:latest"
-# Dask worker pool size
+# Dask worker pool size (changes will affect cost)
 spot_node_count = 3
+# Make sure this value is sufficiently large that all workers are scheduled
 dask_worker_count = 100
+
+# TODO: hibernate = false
 
 # ------------------------------------------------------------------------------------------------------- #
 # Note: Make sure that scheduler and notebook resources can be scheduled on stable instance simutaneously #
