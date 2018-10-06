@@ -17,8 +17,10 @@ module "eks" {
   # Node types
   stable_instance_type = "${var.stable_instance_type}"
   spot_instance_type = "${var.spot_instance_type}"
+  spot_price = "${var.spot_price}"
   # Dask worker pool size
   spot_node_count = "${var.spot_node_count}"
+  hibernate = "${var.hibernate}"
   # Jupyter notebook resources
   jupyter_gb_storage = "${var.jupyter_gb_storage}"
   # File output paths

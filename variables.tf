@@ -16,6 +16,10 @@ variable "spot_instance_type" {
   description = "EC2 instance type for spot nodes"
 }
 
+variable "spot_price" {
+  description = "Maximum spot instance price"
+}
+
 variable "worker_image" {
   description = "Docker image to pull for worker nodes"
 }
@@ -26,6 +30,10 @@ variable "spot_node_count" {
 
 variable "dask_worker_count" {
   description = "Number of dask workers to schedule"
+}
+
+variable "hibernate" {
+  description = "Keep cluster nodes running or not"
 }
 
 variable "dask_worker_mb_ram" {

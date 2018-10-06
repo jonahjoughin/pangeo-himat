@@ -33,6 +33,7 @@ resource "aws_launch_configuration" "spot_pool" {
   iam_instance_profile        = "${aws_iam_instance_profile.workers.name}"
   image_id                    = "${data.aws_ami.eks_worker.id}"
   instance_type               = "${var.spot_instance_type}"
+  spot_price                  = "${var.spot_price}"
   name_prefix                 = "spot"
   security_groups             = ["${aws_security_group.workers.id}"]
   user_data                   = "${base64encode(data.template_file.spot_userdata.rendered)}"
@@ -44,7 +45,7 @@ resource "aws_launch_configuration" "spot_pool" {
 
 resource "aws_autoscaling_group" "stable_pool" {
   launch_configuration = "${aws_launch_configuration.stable_pool.id}"
-  desired_capacity     = 1
+  desired_capacity     = "${var.hibernate ? 0 : 1}"
   max_size             = 1
   min_size             = 0
   name                 = "${var.cluster_name}_stable"
@@ -64,7 +65,7 @@ resource "aws_autoscaling_group" "stable_pool" {
 # Create worker scaling group
 resource "aws_autoscaling_group" "spot_pool" {
   launch_configuration = "${aws_launch_configuration.spot_pool.id}"
-  desired_capacity     = "${var.spot_node_count}"
+  desired_capacity     = "${var.hibernate ? 0 : var.spot_node_count}"
   max_size             = "${var.spot_node_count}"
   min_size             = 0
   name                 = "${var.cluster_name}_spot"

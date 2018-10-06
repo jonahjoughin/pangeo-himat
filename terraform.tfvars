@@ -9,10 +9,11 @@ spot_instance_type = "m5.xlarge"
 worker_image = "jonahjoughin/pangeo-himat:latest"
 # Dask worker pool size (changes will affect cost)
 spot_node_count = 3
+# Maximum price to pay for spot instances (use on-demand cost for instance type used)
+spot_price = 0.192
 # Make sure this value is sufficiently large that all workers are scheduled
 dask_worker_count = 100
-
-# TODO: hibernate = false
+hibernate = false
 
 # ------------------------------------------------------------------------------------------------------- #
 # Note: Make sure that scheduler and notebook resources can be scheduled on stable instance simutaneously #
