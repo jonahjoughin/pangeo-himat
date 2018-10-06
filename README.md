@@ -20,7 +20,7 @@ To shut down non-essential components of the cluster when not in use to save cos
 1. Run `terraform destroy --target=module.kubernetes`
 2. Run `terraform destroy --target=module.eks`
 
-## Kubectl support
+## Kubectl
 To run `kubectl` commands, simply append `--kubeconfig ./kubeconfig.yml` to any command. For example, if you would like to retrieve a list of pods, run `kubectl get pods --kubeconfig ./kubeconfig.yml`.
 
 ## Customization
