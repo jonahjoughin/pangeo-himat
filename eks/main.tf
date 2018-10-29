@@ -49,7 +49,7 @@ resource "aws_autoscaling_group" "stable_pool" {
   max_size             = 1
   min_size             = 0
   name                 = "${var.cluster_name}_stable"
-  vpc_zone_identifier  = ["${aws_subnet.cluster.*.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.cluster.0.id}"]
   tag {
     key                 = "Name"
     value               = "${var.cluster_name}_stable"

@@ -1,5 +1,5 @@
 # Cluster info
-cluster_name = "pangeo-himat"
+cluster_name = "himat"
 cluster_region = "us-west-2"
 cluster_version = "1.10"
 # Node types (changes will affect cost)
